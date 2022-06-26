@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Houses</title>
+    <link rel="stylesheet" href="css/fontawesome.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/select2.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="dashboard">
+    <div class="application__container">
+        <header>
+            <div class="bg"></div>
+            <div class="container-fluid">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="/" class="logo">
+                        Se<span>pan</span>ja
+                    </a>
+                    <p class="balance">
+                        <i class="far fa-dollar-sign"></i>
+                        اعتبار:
+                        <span class="ltr-text">200,000</span>
+                        تومان
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="#" class="hint--bottom-right" aria-label="درخواست پشتیبانی">
+                                <i class="far fa-user-headset"></i>
+                            </a>
+                        </li>
+                        <li class="notification">
+                            <span class="indicator"></span>
+
+                            <i class="far fa-envelope-open"></i>
+                            <ul>
+                                <li class="title-box">۲ پیام جدید</li>
+                                <li>
+                                    <a href="#">
+                                        <p class="title">واریز وجه انجام شد</p>
+                                        <p class="desc">مبلغ ۱ میلیون و ۵۰۰ هزار تومان به حساب شما واریز شد.</p>
+                                        <span class="date">۲ ساعت پیش</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <p class="title">درخواست شما در حال بررسی است</p>
+                                        <p class="desc">درخواست برداشت وجه شما به مبلغ: 1,500,000 تومان در دست بررسی
+                                            است.</p>
+                                        <span class="date">۲ روز پیش</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <form action="." method="POST">
+                                <button class="noStyle hint--bottom-right" aria-label="خروج از حساب کاربری">
+                                    <i class="far fa-power-off"></i>
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="container-fluid">
+                <div class="application__main_row">
+                    <aside class="sidebar__box">
+                        <div class="sidebar__menu_close toggle_sidebar"><i class="fas fa-times"></i></div>
+
+                        <div class="sidebar__user_account">
+                            <img src="images/user-image.png" alt="ابراهیم حنفی" title="ابراهیم حنفی" />
+                            <p class="name">ابراهیم حنفی</p>
+                        </div>
+
+                        <ul class="sidebar__nav">
+                            <li>
+                                <a href="dashboard-home.html">
+                                    <i class="far fa-home"></i>
+                                    پیشخوان
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="dashboard-houses.html">
+                                    <i class="far fa-house"></i>
+                                    اقامتگاه ها
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dashboard-submit.html">
+                                    <i class="far fa-comment-plus"></i>
+                                    ثبت اقامتگاه جدید
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dashboard-reserves.html">
+                                    <i class="far fa-clipboard-list-check"></i>
+                                    رزرو ها
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dashboard-wallet.html">
+                                    <i class="far fa-wallet"></i>
+                                    کیف پول
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dashboard-install.html">
+                                    <i class="fab fa-android"></i>
+                                    نصب
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="dashboard-profile.html">
+                                    <i class="far fa-cog"></i>
+                                    ویرایش پروفایل
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="far fa-power-off"></i>
+                                    خروج
+                                </a>
+                            </li>
+
+                        </ul>
+                    </aside>
+                    <div class="sidebar__menu_open toggle_sidebar"><i class="fas fa-bars"></i></div>
+
+                    <div class="dashboard__main">
+                        <div class="content">
+                            <div class="dashboard__welcome">
+                                <h1 class="title">اقامتگاه ها</h1>
+                                <p class="desc">
+                                    اقامتگاه های ثبت شده توسط شما
+                                </p>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="dashboard__widget">
+                                        <div class="header align-items-center">
+                                            <div class="title">اقامتگاه های شما</div>
+                                            <span class="icon"><i class="far fa-archive"></i></span>
+                                        </div>
+                                        <div class="body products">
+                                            <div class="products__details">
+                                                <div class="column-setting d-none d-sm-block">
+                                                    <span id="changeToColumn" class="active" title="حالت افقی"><i
+                                                            class="fas fa-columns"></i></span>
+                                                    <span id="changeToList" title="حالت عمودی"><i
+                                                            class="fas fa-list"></i></span>
+                                                </div>
+                                                <select name="sort" id="sort">
+                                                    <option value="0">محبوب ترین</option>
+                                                    <option value="1">جدیدترین</option>
+                                                    <option value="2">قدیمی ترین</option>
+                                                    <option value="3">ارزان ترین</option>
+                                                    <option value="4">گران ترین</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="products__wrapper wrapper-changer column">
+                                                <div class="products__item">
+                                                    <div class="image-box">
+                                                        <a href="#">
+                                                            <img loading="lazy" src="images/house-01.jpeg"
+                                                                alt="اقامتگاه بوم‌گردی توکا(2)، در رشت"
+                                                                title="اقامتگاه بوم‌گردی توکا(2)، در رشت">
+                                                        </a>
+                                                    </div>
+                                                    <div class="content-box">
+                                                        <h2 class="title">
+                                                            <a href="#">
+                                                                اقامتگاه بوم‌گردی توکا(2)، در رشت
+                                                            </a>
+                                                        </h2>
+                                                        <p class="desc">
+                                                            اقامتگاه توکا با نمای سنتی در مکانی روستایی در اطراف
+                                                            شالیزارهای برنج و جنگل های جلگه ای گیلان در سکوت آرام و دل
+                                                            انگیز قرار دارد.
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="products__item">
+                                                    <div class="image-box">
+                                                        <a href="#">
+                                                            <img loading="lazy" src="images/house-02.jpeg"
+                                                                alt="اقامتگاه بوم‌گردی خاتون(واحد3)، در برغان"
+                                                                title="اقامتگاه بوم‌گردی خاتون(واحد3)، در برغان">
+                                                        </a>
+                                                    </div>
+                                                    <div class="content-box">
+                                                        <h2 class="title">
+                                                            <a href="#">
+                                                                اقامتگاه بوم‌گردی خاتون(واحد3)، در برغان
+                                                            </a>
+                                                        </h2>
+                                                        <p class="desc">
+                                                            بومگردی خاتون، از واحدهای منتخب و پرایم اتاقک در منطقه خوش
+                                                            آب و هوای برغان است. روستای برغان در بخش چندار شهرستان
+                                                            ساوجبلاغ در غرب استان البرز در میان کرج و هشتگرد واقع
+                                                            شده‌است
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="products__item">
+                                                    <div class="image-box">
+                                                        <a href="#">
+                                                            <img loading="lazy" src="images/house-03.jpeg"
+                                                                alt="اقامتگاه بوم‌گردی خورشید (طبقه اول)، در مینودشت"
+                                                                title="اقامتگاه بوم‌گردی خورشید (طبقه اول)، در مینودشت">
+                                                        </a>
+                                                    </div>
+                                                    <div class="content-box">
+                                                        <h2 class="title">
+                                                            <a href="#">
+                                                                اقامتگاه بوم‌گردی خورشید (طبقه اول)، در مینودشت
+                                                            </a>
+                                                        </h2>
+                                                        <p class="desc">
+                                                            اقامتگاه خورشید مجوز خانه مسافر درجه یک از سازمان میراث
+                                                            فرهنگی و گردشگری دارد و در روستای معرکه محله با فاصله ۱۵
+                                                            کیلومتری از شهر مینودشت و ۷ کیلومتری از محور اصلی مینودشت
+                                                            آزادشهر قرار گرفته است.
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="products__item">
+                                                    <div class="image-box">
+                                                        <a href="#">
+                                                            <img loading="lazy" src="images/house-04.jpeg"
+                                                                alt="اقامتگاه بوم‌گردی خاتون(واحد2)، در برغان"
+                                                                title="اقامتگاه بوم‌گردی خاتون(واحد2)، در برغان">
+                                                        </a>
+                                                    </div>
+                                                    <div class="content-box">
+                                                        <h2 class="title">
+                                                            <a href="#">
+                                                                اقامتگاه بوم‌گردی خاتون(واحد2)، در برغان
+                                                            </a>
+                                                        </h2>
+                                                        <p class="desc">
+                                                            بومگردی خاتون به صورت طبقاتی بوده و سه اتاق آن با متراژهای
+                                                            12، 15 و 20 متر با چند پله از هم فاصله دارند. در حیاط با
+                                                            صفای بومگردی
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="products__item">
+                                                    <div class="image-box">
+                                                        <a href="#">
+                                                            <img loading="lazy" src="images/house-05.jpeg"
+                                                                alt="اقامتگاه بوم‌گردی امیر(واحد1)، در شیرگاه"
+                                                                title="اقامتگاه بوم‌گردی امیر(واحد1)، در شیرگاه">
+                                                        </a>
+                                                    </div>
+                                                    <div class="content-box">
+                                                        <h2 class="title">
+                                                            <a href="#">
+                                                                اقامتگاه بوم‌گردی امیر(واحد1)، در شیرگاه
+                                                            </a>
+                                                        </h2>
+                                                        <p class="desc">
+                                                            اقامتگاه بومگردی در دل جنگل حومه سد لفور و سد سنبل رود و ۷
+                                                            آبشار بابل کنار و منطقه های تفریحی و توریستی دیگر واقع شده
+                                                            است.
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="products__item">
+                                                    <div class="image-box">
+                                                        <a href="#">
+                                                            <img loading="lazy" src="images/house-06.jpeg"
+                                                                alt="اقامتگاه بوم‌گردی خورشید (طبقه همکف)، در مینودشت"
+                                                                title="اقامتگاه بوم‌گردی خورشید (طبقه همکف)، در مینودشت">
+                                                        </a>
+                                                    </div>
+                                                    <div class="content-box">
+                                                        <h2 class="title">
+                                                            <a href="#">
+                                                                اقامتگاه بوم‌گردی خورشید (طبقه همکف)، در مینودشت
+                                                            </a>
+                                                        </h2>
+                                                        <p class="desc">
+                                                            این اقامتگاه یک سوئیت دنج و باصفا در منطقه‌‌ای بکر است و
+                                                            چشم‌‌انداز زیبایی رو به جنگل، رودخانه و شالیزارها دارد.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <nav class="shared__pagination" aria-label="Page navigation">
+                                                <ul class="pagination">
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" aria-label="قبلی">
+                                                            <span aria-hidden="true">«</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item active"><a class="page-link" href="#">1</a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">35</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#" aria-label="بعدی">
+                                                            <span aria-hidden="true">»</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>
+                &copy; کلیه حقوق برای سپنجا محفوظ است.
+            </p>
+            <ul>
+                <li><a href="#">قوانین و مقررات</a></li>
+                <li><a href="#">حریم خصوصی</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/select2.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
